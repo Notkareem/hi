@@ -11,7 +11,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : EX Clan ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`By : S O K R`,"http://twitch.tv/Death Shop")
+client.user.setGame(`By : S O K R`,"http://twitch.tv/SOKR")
 client.user.setStatus("dnd")
 });
 
@@ -22,7 +22,7 @@ client.on("message", async message => {
     command = command.slice(prefix.length);
         if(!message.channel.guild) return;
             var args = message.content.split(" ").slice(1).join(" ");
-            if(command == "bc") {
+            if(command == "bc1") {
                 if(!message.member.hasPermission("ADMINISTRATOR")) {
                     return message.channel.send("**للأسف لا تمتلك صلاحية `ADMINISTRATOR`**");
                 }
@@ -58,7 +58,7 @@ client.on("message", async message => {
                             
                         });
             }
-            if(command == "bco") {
+            if(command == "bc2") {
                 if(!message.member.hasPermission("ADMINISTRATOR")) {
                     return message.channel.send("**للأسف لا تمتلك صلاحية `ADMINISTRATOR`**");
                 }
@@ -147,10 +147,10 @@ client.on("message", async message => {
             .setThumbnail(message.author.avatarURL)
             .setDescription(`**__برودكاست بوت | Version 1.1__ 
 
-            برودكاست عادي : ${prefix}bc
+            برودكاست عادي : ${prefix}bc1
             دعوة البوت لسيرفرك : ${prefix}invite
             معلومات عن السيرفر : ${prefix}server
-            برودكاست للأونلاين فقط : ${prefix}bco
+            برودكاست للأونلاين فقط : ${prefix}bc2
             يعرض لك عدد المتبندين من سيرفرك : ${prefix}banned
             رابط سيرفر الدعم الفني : https://discord.gg/k6MvfrC
             **`);
