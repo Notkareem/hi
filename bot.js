@@ -45,9 +45,7 @@ client.on("message", async message => {
                                         message.guild.members.forEach(member => {
                                             let bc = new Discord.RichEmbed()
                                             .setColor("Yellow")
-                                            .setThumbnail(message.author.avatarURL)
                                             .addField("Message", args);
-
                                             member.sendEmbed(bc);
                                         });
                         });
@@ -77,17 +75,12 @@ client.on("message", async message => {
 
                             yes.on("collect", v => {
                                 m.delete();
-                                    message.channel.send(`:ballot_box_with_check: | Done ... The Broadcast Message Has Been Sent For ${message.guild.members.filter(r => r.presence.status !== "offline").size} Members`).then(msg => msg.delete(5000));
+                                    message.channel.send(`Done Send${message.guild.members.filter(r => r.presence.status !== "offline").size} Members`).then(msg => msg.delete(5000));
                                         message.guild.members.filter(r => r.presence.status !== "offline").forEach(member => {
                                             let bco = new Discord.RichEmbed()
-                                            .setColor("RANDOM")
-                                            .setThumbnail(message.author.avatarURL)
-                                            .setTitle("Broadcast")
-                                            .addField("Server", message.guild.name)
-                                            .addField("Sender", message.author.username)
+                                            .setColor("Yellow")
                                             .addField("Message", args);
-
-                                            member.sendEmbed(bco);
+                                            member.sendEmbed(bc2);
                                         });
                         });
                         no.on("collect", v => {
@@ -148,11 +141,10 @@ client.on("message", async message => {
             .setDescription(`**__برودكاست بوت | Version 1.1__ 
 
             برودكاست عادي : ${prefix}bc1
+            برودكاست للأونلاين فقط : ${prefix}bc2
             دعوة البوت لسيرفرك : ${prefix}invite
             معلومات عن السيرفر : ${prefix}server
-            برودكاست للأونلاين فقط : ${prefix}bc2
             يعرض لك عدد المتبندين من سيرفرك : ${prefix}banned
-            رابط سيرفر الدعم الفني : https://discord.gg/k6MvfrC
             **`);
             message.channel.sendEmbed(help); // رابط السيرفر يعود الى سيرفر CODES .
     }
