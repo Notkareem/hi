@@ -44,7 +44,7 @@ client.on("message", async message => {
                                     message.channel.send(`Done Send ${message.guild.memberCount} Members`).then(msg => msg.delete(5000));
                                         message.guild.members.forEach(member => {
                                             let bc = new Discord.RichEmbed()
-                                            .setColor("Yellow")
+                                            .setColor("RED")
                                             .addField("Message", args);
                                             member.sendEmbed(bc);
                                         });
@@ -78,7 +78,7 @@ client.on("message", async message => {
                                     message.channel.send(`Done Send${message.guild.members.filter(r => r.presence.status !== "offline").size} Members`).then(msg => msg.delete(5000));
                                         message.guild.members.filter(r => r.presence.status !== "offline").forEach(member => {
                                             let bco = new Discord.RichEmbed()
-                                            .setColor("Yellow")
+                                            .setColor("RED")
                                             .addField("Message", args);
                                             member.sendEmbed(bc2);
                                         });
